@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Генератор паролей</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="intro" aria-labelledby="pageTitle">
+      <h1 id="pageTitle" data-aos="fade-up">Генератор паролей</h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="100">Собери надежный пароль под нужный случай или проверь тот, которым уже пользуешься.</p>
+    </section>
+
+    <section class="generator" aria-label="Настройки генератора паролей" data-aos="fade-left" data-aos-delay="180">
+      <div class="mode-row" data-aos="fade-up" data-aos-delay="220">
+        <button class="mode-btn active" id="generateModeBtn" type="button">Генерировать</button>
+        <button class="mode-btn" id="checkModeBtn" type="button">Проверить свой</button>
+      </div>
+
+      <div class="output-row" data-aos="fade-up" data-aos-delay="260">
+        <label class="sr-only" for="passwordInput">Пароль</label>
+        <input type="text" id="passwordInput" readonly placeholder="Пароль появится здесь" />
+        <button class="text-button" id="copyBtn" type="button">Копировать</button>
+      </div>
+      <p class="password-hint" id="passwordHint">Пароль должен состоять от 6 до 40 символов</p>
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+
+      <div class="strength" aria-live="polite" data-aos="fade-up" data-aos-delay="320">
+        <span class="strength-label" id="strengthLabel">Надежность</span>
+        <span class="strength-bar" aria-hidden="true"><span id="strengthFill"></span></span>
+      </div>
+
+      <div class="controls" id="controls">
+        <div class="control-group" data-aos="fade-up" data-aos-delay="380">
+          <div class="length-row">
+            <label for="lengthRange">Длина</label>
+            <output id="lengthValue" for="lengthRange">16</output>
+          </div>
+          <input type="range" id="lengthRange" min="6" max="40" value="16" />
+        </div>
+
+        <div class="options" data-aos="fade-up" data-aos-delay="440">
+          <label class="option">
+            <input type="checkbox" id="uppercase" checked />
+            <span>Заглавные</span>
+          </label>
+          <label class="option">
+            <input type="checkbox" id="lowercase" checked />
+            <span>Строчные</span>
+          </label>
+          <label class="option">
+            <input type="checkbox" id="numbers" checked />
+            <span>Цифры</span>
+          </label>
+          <label class="option">
+            <input type="checkbox" id="symbols" checked />
+            <span>Символы</span>
+          </label>
+          <label class="option option-wide">
+            <input type="checkbox" id="readable" checked />
+            <span>Без похожих символов</span>
+          </label>
+        </div>
+      </div>
+
+      <button class="generate-btn" id="generateBtn" type="button" data-aos="fade-up" data-aos-delay="500">Сгенерировать</button>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
